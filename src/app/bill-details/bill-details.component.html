@@ -1,0 +1,240 @@
+<div class="w-100"  [formGroup]="billDetails">
+    <div class="min-header">
+    <div class="import">
+        <button mat-fab color="primary" aria-label="Example icon button with a menu icon" (click)="onImporticon()" [disabled]="isEditMode">
+            <mat-icon>  <img src="assets/import_icon.png" alt="Import" ></mat-icon>
+        </button>
+        <mat-slide-toggle (change)="toggelPaymentStatus($event)"
+        class="example-margin"
+        [color]="color"
+        [checked]="billDetails.value.paymentStatus">
+       Payment Received
+    </mat-slide-toggle>
+    </div>
+    <div class="amt">
+        Total Amount: {{billDetails.value.totalAmount}}
+    </div>
+    </div>
+    <div class="basic_box">
+     <div class="input_labl">Basic Info</div>
+    <div class="row_1">
+    <mat-form-field appearance="legacy">
+        <mat-label>Invoice No</mat-label>
+        <input matInput type="number" class="form-control" formControlName="invoiceNo">
+    </mat-form-field>
+    <mat-form-field appearance="legacy">
+        <mat-label>DWB No</mat-label>
+        <input matInput type="number" class="form-control" formControlName="DWBNo" >
+    </mat-form-field>
+    <mat-form-field appearance="legacy">
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker" class="form-control" formControlName="date" >
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field appearance="legacy">
+        <mat-label>From</mat-label>
+        <input matInput type="text" class="form-control" formControlName="from">
+    </mat-form-field>
+    <mat-form-field appearance="legacy">
+        <mat-label>To</mat-label>
+        <input matInput type="text" class="form-control" formControlName="to">
+    </mat-form-field>
+      </div>
+    </div>
+
+    <div class="basic_box d-flex gap">
+        <div class="flexbox_row_2" formGroupName="partydetails">
+         <div class="input_labl">Details of Bill Party</div>
+            <div class="row_2a">
+            <div>
+                <mat-form-field appearance="legacy">
+                    <mat-label>Party Name</mat-label>
+                    <input matInput type="text" class="form-control" formControlName="name" >
+                    </mat-form-field>
+                    <mat-form-field appearance="legacy">
+                    <mat-label>GSTTIN</mat-label>
+                    <input matInput type="text" class="form-control" formControlName="GSTTIN">
+                </mat-form-field>      
+            </div>
+            <div>
+                <mat-form-field appearance="legacy">
+                    <mat-label>Address Line 1</mat-label>
+                    <input matInput type="text" class="form-control" formControlName="AddressLine1">
+                    </mat-form-field>
+                    <mat-form-field appearance="legacy">
+                    <mat-label>State</mat-label>
+                    <input matInput type="text" class="form-control" formControlName="state">
+                </mat-form-field>      
+            </div>
+            <div>
+                <mat-form-field appearance="legacy">
+                    <mat-label>Address Line 2</mat-label>
+                    <input matInput type="text" class="form-control" formControlName="AddressLine2">
+                    </mat-form-field>
+                    <mat-form-field appearance="legacy">
+                    <mat-label>PIN</mat-label>
+                    <input matInput type="text" class="form-control" formControlName="PIN">
+                </mat-form-field>      
+            </div>
+            </div>
+       </div>
+       <div  class="flexbox_row_2">
+        <div class="input_labl">Details of Service</div>
+           <div class="row_2b">
+            <mat-form-field appearance="legacy">
+            <mat-label>Truck No</mat-label>
+            <input matInput type="text" class="form-control" formControlName="truckNo">
+            </mat-form-field>
+            <mat-form-field appearance="legacy">
+            <mat-label>Invoice no</mat-label>
+            <input matInput type="text" class="form-control" formControlName="partInvNo">
+            </mat-form-field>
+           </div>
+      </div>
+    </div>
+
+
+    <div class="basic_box d-flex gap">
+        <div class="flexbox_row_2" formGroupName="consignorDetails">
+         <div class="input_labl">Details of Consignor</div>
+            <div class="row_2a">
+            <div>
+                <mat-form-field appearance="legacy">
+                    <mat-label>Consignor Name</mat-label>
+                    <input matInput type="text" class="form-control" formControlName="name" >
+                    </mat-form-field>
+                    <mat-form-field appearance="legacy">
+                    <mat-label>GSTTIN</mat-label>
+                    <input matInput type="text" class="form-control" formControlName="GSTTIN">
+                </mat-form-field>      
+            </div>
+            <div>
+                <mat-form-field appearance="legacy">
+                    <mat-label>Address Line 1</mat-label>
+                    <input matInput  type="text" class="form-control" formControlName="AddressLine1">
+                    </mat-form-field>
+                    <mat-form-field appearance="legacy">
+                    <mat-label>State</mat-label>
+                    <input matInput type="text" class="form-control" formControlName="state">
+                </mat-form-field>      
+            </div>
+            <div>
+                <mat-form-field appearance="legacy">
+                    <mat-label>Address Line 2</mat-label>
+                    <input matInput  type="text" class="form-control" formControlName="AddressLine2">
+                    </mat-form-field>
+                    <mat-form-field appearance="legacy">
+                    <mat-label>PIN</mat-label>
+                    <input matInput type="text" class="form-control" formControlName="PIN">
+                </mat-form-field>      
+            </div>
+            </div>
+       </div>
+       <div  class="flexbox_row_2" formGroupName="consigneedetails">
+        <div class="input_labl consignee">Details of Consignee 
+        <div>
+             <mat-slide-toggle (change)="toggelbilldetails($event)"
+            class="example-margin"
+            [color]="color"
+            [disabled]="isEditMode"
+            [checked]="checked">
+            Same as Bill Party
+        </mat-slide-toggle>
+        </div></div>
+        <div class="row_2a">
+            <div>
+                <mat-form-field appearance="legacy">
+                    <mat-label>Consignee Name</mat-label>
+                    <input matInput type="text" class="form-control" formControlName="name" >
+                    </mat-form-field>
+                    <mat-form-field appearance="legacy">
+                    <mat-label>GSTTIN</mat-label>
+                    <input matInput type="text" class="form-control" formControlName="GSTTIN">
+                </mat-form-field>      
+            </div>
+            <div>
+                <mat-form-field appearance="legacy">
+                    <mat-label>Address Line 1</mat-label>
+                    <input matInput  type="text" class="form-control" formControlName="AddressLine1">
+                    </mat-form-field>
+                    <mat-form-field appearance="legacy">
+                    <mat-label>State</mat-label>
+                    <input matInput type="text" class="form-control" formControlName="state">
+                </mat-form-field>      
+            </div>
+            <div>
+                <mat-form-field appearance="legacy">
+                    <mat-label>Address Line 2</mat-label>
+                    <input matInput  type="text" class="form-control" formControlName="AddressLine2">
+                    </mat-form-field>
+                    <mat-form-field appearance="legacy">
+                    <mat-label>PIN</mat-label>
+                    <input matInput type="text" class="form-control" formControlName="PIN">
+                </mat-form-field>      
+            </div>
+            </div>
+      </div>
+    </div>
+
+    <div class="basic_box">
+        <div class="input_labl">Other details/Charges</div>
+       <div class="row_1">
+       <mat-form-field appearance="legacy">
+           <mat-label>Weight</mat-label>
+           <input matInput type="text" class="form-control" formControlName="weight" >
+       </mat-form-field>
+       <mat-form-field appearance="legacy">
+           <mat-label>Freight</mat-label>
+           <input matInput type="number" step="0.01" class="form-control" formControlName="frieght" (input)="calculateTotalAmount()">
+       </mat-form-field>
+       <mat-form-field appearance="legacy">
+        <mat-label>WT Charges</mat-label>
+        <input matInput type="number" step="0.01" class="form-control" formControlName="wtCharges" (input)="calculateTotalAmount()">
+     </mat-form-field>
+       <mat-form-field appearance="legacy">
+           <mat-label>Loading Charges</mat-label>
+           <input matInput type="number" step="0.01" class="form-control" formControlName="LoadingCharges" (input)="calculateTotalAmount()">
+       </mat-form-field>
+       <mat-form-field appearance="legacy">
+        <mat-label>Godown Charges</mat-label>
+        <input matInput type="number" step="0.01" class="form-control" formControlName="godownCharges" (input)="calculateTotalAmount()">
+     </mat-form-field>
+       <mat-form-field appearance="legacy">
+           <mat-label>Halting</mat-label>
+           <input matInput type="number" step="0.01" class="form-control" formControlName="halting" (input)="calculateTotalAmount()">
+       </mat-form-field>
+       </div>
+       </div>
+
+       <div class="btn_row">
+        <button mat-raised-button color="primary" type="submit" [disabled]="!billDetails.valid" (click)="onAddUpdatebill()">{{isEditMode ? 'Update Bill' :'Add Bill'}}</button>
+       </div>
+</div>
+<div id="popup1" class="overlay" [ngClass]="popupVisible ? 'show':''">
+	<div class="popup">
+		<h2>Import from Bill</h2>
+		<a class="close" (click)="closePopup()">&times;</a>
+		<div class="content">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Bill No</th>
+                        <th>Bill Party</th>
+                        <th>Bill Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody >
+                    <tr *ngFor="let item of impotedbillData">
+                        <td>{{item.invoiceNo}}</td>
+                        <td>{{item.partydetails.name}}</td>
+                        <td>{{item.date}}</td>
+                        <td> <button mat-raised-button color="primary" (click)="onImport(item)">Import</button></td>
+                    </tr>
+    
+                </tbody>
+            </table>
+		</div>
+	</div>
+</div>

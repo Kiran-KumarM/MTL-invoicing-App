@@ -1,0 +1,38 @@
+    <ng-container > 
+        <div class="w-100"> 
+        <div class="title">Bills</div>
+          <table>
+            <thead>
+                <tr>
+                    <th>Bill No</th>
+                    <th>Bill Party</th>
+                    <th>Bill Date</th>
+                    <th>Amount</th>
+                    <th>Payment status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody >
+                <tr *ngFor="let item of billData">
+                    <td>{{item.invoiceNo}}</td>
+                    <td>{{item.partydetails.name}}</td>
+                    <td>{{item.date}}</td>
+                    <td>{{item.totalAmount}}</td>
+                    <td> <div><span class="status_tag" [ngClass]="item.paymentStatus ? 'primary_tag':'warn_tag'">{{item.paymentStatus ? 'Received':'Pending'}}</span></div></td>
+                    <td><button mat-icon-button color="primary"  matTooltip="Edit Bill" matTooltipPosition="above" (click)="editBills(item)">
+                        <mat-icon>edit</mat-icon>
+                      </button>
+                      <button mat-icon-button color="primary"  matTooltip="Generate Invoice" matTooltipPosition="above">
+                        <mat-icon>cloud_download</mat-icon>
+                      </button>                    
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+       </div>
+    </ng-container>
+    <!-- <ng-container *ngIf="selectedNav==2">
+        <app-bill-details class="w-100"></app-bill-details>
+    </ng-container> -->
+

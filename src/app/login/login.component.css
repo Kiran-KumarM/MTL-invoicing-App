@@ -1,0 +1,29 @@
+.login_container{
+    background-color: var( --color-bg-default);
+    margin: 60px auto 40px auto;
+    padding: 40px;
+    -webkit-box-shadow: 1px 1px 4px var(--color-border-default);
+    box-shadow: 1px 1px 4px var(--color-border-default);
+    border-radius: 5px;
+    border: 2px solid var(--color-border-default);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-animation: swing-in .15s;
+    animation: swing-in .2s;
+    width: 380px;
+    box-sizing: border-box;
+}
+.mat-form-field,.login_container{
+    display:grid
+}
+.login_des{
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+.logo_container{
+    display: grid;
+    place-content: center;
+    margin-bottom: 15px;
+}

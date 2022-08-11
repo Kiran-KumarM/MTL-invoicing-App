@@ -1,0 +1,123 @@
+.min-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    align-items: center;
+ }
+ .amt{
+    font-size: 20px;
+    margin-right: 20px;
+    font-weight: 500;
+ }
+ .import{
+    display: flex;
+    align-items: center;
+    gap: 45px;
+ }
+.basic_box{
+    margin-top: 15px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--color-border-default);
+}
+.input_labl{
+    font-size:20px;
+    margin-bottom: 10px;
+}
+.row_1{
+    display: flex;
+    justify-content: space-between;
+    width: inherit;
+}
+.gap{
+    gap:35px;
+}
+.flexbox_row_2{
+    flex: 1;
+}
+.row_2a > div,.row_2b,.input_labl.consignee{
+    display: flex;
+    justify-content: space-between;
+}
+.row_2a > div .mat-form-field:first-child ,.row_2b .mat-form-field:first-child{
+width:45%
+}
+.row_2a > div .mat-form-field:last-child ,.row_2b .mat-form-field:last-child{
+    width:35%
+ }
+ .input_labl.consignee >div{
+     font-size: 14px;
+ }
+
+ .btn_row{
+    display: flex;
+    justify-content: flex-end;
+ }
+ .btn_row >button{
+    width: 15%;
+ }
+
+
+ .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    z-index: 9999;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .overlay.show {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 45%;
+    position: relative;
+    transition: all 5s ease-in-out;
+  }
+  
+  .popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+  }
+  .popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+  .popup .close:hover {
+    color: #06D85F;
+  }
+  .popup .content {
+    max-height: 30%;
+    overflow: auto;
+  }
+  table{
+    width:100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+td,th{
+    text-align: center;
+    padding: 15px 12px;
+}
+tr{
+    border-bottom: 1px solid #f1f1f1;
+}
+tr:hover td{
+    background-color: #f9f9f9;
+}

@@ -1,0 +1,29 @@
+<div class="header" *ngIf="!isLogin">
+    <div class="wrapper">
+        <div class="sub_wrapper">
+            <img class="img_height" src="assets/MTL_logo.jpg" alt="MTL logo" >
+        </div>
+        <div class="sub_wrapper">
+            <div class="nav_bar">
+                <div *ngFor="let data of navList" [ngClass]="(selectedNav == data.id ? 'active' : '')" (click)="onNavSelect(data)">{{data.name}}</div>
+            </div>
+            <div class="profile">
+                <div class="avatar">
+                    <span>MS</span>
+                </div>
+                <span class="name">Name dsd</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div [ngClass]="(!isLogin ? 'bill_container wrapper' : '')" > 
+<router-outlet></router-outlet>
+</div>
+<div class="spinner" id="loading"> 
+    <mat-progress-spinner
+    class="example-margin"
+    [mode]="mode"
+    [value]="value">
+    </mat-progress-spinner>
+</div>

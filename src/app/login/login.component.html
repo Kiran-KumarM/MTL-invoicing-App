@@ -1,0 +1,17 @@
+<div class="login_container">
+  <div class="logo_container">
+    <img src="assets/MTL_logo.jpg" alt="MTL logo" >
+  </div>
+  <ng-container [formGroup]="loginForm">
+     <label class="login_des">Login to MTL</label>
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" class="form-control" formControlName="email" >
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" class="form-control" formControlName="password">
+        </mat-form-field>
+      <button mat-raised-button color="primary" type="submit"  [disabled]="!loginForm.valid"  (click)="onSubmit()">Login</button>
+  </ng-container>
+</div>

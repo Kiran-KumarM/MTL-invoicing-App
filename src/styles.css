@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+
+    --backround-color:#f8f8f7;
+    --color-border-default: #eee;
+    --color-bg-default: #fff;
+    --color-border-5--rgb: 0,0,0;
+    --color-primary:#3f51b5;
+    --color-positive:#3bba39;
+    --color-warn:#f44336;
+   
+  }
+  body{
+      background-color: var(--backround-color);
+  }
+
+  @keyframes swing-in {
+    0% {
+        opacity: .4;
+        -webkit-transform: rotateX(-40deg);
+        transform: rotateX(-40deg);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: rotateX(0deg);
+        transform: rotateX(0deg);
+    }
+    }
+body { margin: 0; font-family: Open Sans,sans-serif; }
+.mat-form-field-flex:hover{
+outline:transparent;
+}
+.spinner{   
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    background-color: rgb(115 115 115 / 21%);
+    justify-content: center;
+    place-items: center;
+}
+.w-100{
+    width: 100%;
+}
+.d-flex{
+    display:flex;
+}
+app-login{
+    display: block;
+    perspective: 1000px;
+}

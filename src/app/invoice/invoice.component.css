@@ -1,0 +1,32 @@
+.wrapper_div{
+    border: 2px solid black;
+    padding: 3px;
+}
+.wrapper_div >div:not(:last-child){
+margin-bottom: 2px;
+}
+.row_1{
+    border: 1px solid black;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 900;
+    text-decoration: underline;
+}
+.row_2{
+    border: 1px solid black;
+    text-align: center;
+    font-size: 12px;
+}
+.row_2 div:first-child{
+    font-weight: 900;
+}
+.row_3{
+    display: flex;
+    justify-content: space-between;
+    gap: 2px;
+}
+.row_3>div{
+    flex: 1;
+    border: 1px solid black;
+    font-size: 12px;
+}
